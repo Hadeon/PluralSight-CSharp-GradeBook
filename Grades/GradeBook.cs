@@ -47,14 +47,18 @@ namespace Grades
                 {
                     if(_name != value)
                     {
-                        //Invoke delegate: NameChanged(_name, value)
-                        NameChanged(_name, value);
+                        NameChangedEventArgs args = new NameChangedEventArgs();
+                        args.ExistingName = Name;
+                        args.NewName = value;
+                        
+                        //Invoke delegate: NameChanged()
+                        NameChanged(this, args);
                     }
                     _name = value;
                 }
             }
         }
-        public NameChangedDelegate NameChanged;
+        public event NameChangedDelegate NameChanged;
 
         private string _name;
         private List<float> grades;
