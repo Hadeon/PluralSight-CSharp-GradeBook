@@ -12,7 +12,7 @@ namespace Grades
         static void Main(string[] args)
         {
 
-            GradeBook book = new GradeBook();
+            GradeBook book = new ThrowAwayGradebook();
 
             book.AddGrade(91);
             book.AddGrade(89.5f);
@@ -22,8 +22,9 @@ namespace Grades
             WriteResult("Average", stats.AverageGrade);
             WriteResult("Highest", stats.HighestGrade);
             WriteResult("Lowest", stats.LowestGrade);
-            WriteResult("Grade", stats.LetterGrade)
+            WriteResult("Grade", stats.LetterGrade);
         }
+    
         static void WriteResult(string description, string result)
         {
             Console.WriteLine($"{description}: {result}");

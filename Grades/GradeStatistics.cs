@@ -8,36 +8,12 @@ namespace Grades
 {
     public class GradeStatistics
     {
+       
         public GradeStatistics()
         {
+            Console.WriteLine("GradeBook : ComputeStatistics");
             HighestGrade = 0;
             LowestGrade = float.MaxValue;
-        }
-        public string Description
-        {
-            get
-            {
-                string result;
-                switch (LetterGrade)
-                {
-                    case "A":
-                        result = "Excellent";
-                        break;
-                    case "B":
-                        result = "Good";
-                        break;
-                    case "C":
-                        result = "Average";
-                        break;
-                    case "D":
-                        result = "Below Average";
-                        break;
-                    case "F":
-                        result = "Failed";
-                        break;
-                }
-                return result;
-             }
         }
 
         public string LetterGrade
